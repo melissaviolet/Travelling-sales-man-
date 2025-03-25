@@ -3,9 +3,9 @@ from functools import lru_cache
 # Adjacency matrix representing the graph (distances between cities)
 graph = [
     [0, 12, 10, 0, 0, 0, 12],  # City 1
-    [12, 0, 8, 11, 0, 0, 0],   # City 2
-    [10, 8, 0, 8, 3, 0, 9],    # City 3
-    [0, 11, 8, 0, 11, 10, 0],  # City 4
+    [12, 0, 8, 12, 0, 0, 0],   # City 2
+    [10, 8, 0, 11, 3, 0, 9],    # City 3
+    [0, 12, 11, 0, 11, 10, 0],  # City 4
     [0, 0, 3, 11, 0, 6, 7],    # City 5
     [0, 0, 0, 10, 6, 0, 9],    # City 6
     [12, 0, 9, 0, 7, 9, 0]     # City 7
@@ -86,5 +86,7 @@ def find_optimal_path():
 optimal_path, shortest_distance = find_optimal_path()
 
 # Output results
-print("Optimal Tour Path:", " ".join(map(str, optimal_path)))
+print("Optimal Tour Path:", " -> ".join(map(str, optimal_path)))
 print("Optimal Tour Distance:", shortest_distance)
+
+
